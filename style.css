@@ -1,0 +1,228 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --bg-color: #000000;
+
+    --bg-input: #06181c;
+
+    --tt-button: #ffffff;
+    --tt-button-hover: #065e7c;
+    --bg-button: #065e7c;
+    --bg-button-hover: #ffffff;
+
+    --bg-svg-hover: #065e7c;
+
+    --tt-color-table: #e1e1e6;
+    --border-table: #065e7c;
+    --color-remove: #f75a68;
+
+    --bg-user-odd: rgba(6, 22, 27, 0.5);
+    --bg-user-even: #06181c;
+
+    --bg-empty: rgba(6, 22, 27, 0.5);
+    --tt-empty: #4e5455;
+
+    --ff-primary: 'Roboto', sans-serif;
+    --ff-secundary: 'Roboto Mono', monospace;;
+}
+
+body {
+    background: var(--bg-color);
+    max-width: 112rem;
+    margin: 0 auto;
+    max-height: 100vh;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 11.5rem 0 8.8rem 0;
+    align-items: center;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.search input {
+    width: 46rem;
+    background: var(--bg-input);
+    border-radius: 5px;
+    border: none;
+    padding: 1.6rem;
+    font-size: 1.6rem;
+    font-family: var(--ff-primary);
+    font-weight: normal;
+    color: var(--tt-color-table);
+    outline: none;
+}
+
+.search button {
+    display: flex;
+    background: var(--bg-button);
+    padding: 1.2rem 3.2rem;
+    border-radius: 5px;
+    align-items: center;
+    gap: 0.8rem;
+    text-transform: uppercase;
+    font-family: var(--ff-primary);
+    font-weight: 700;
+    color: var(--tt-button);
+    cursor: pointer;
+    outline: none;
+
+    transition: background 0.3s;
+}
+
+.search button:hover svg path {
+    fill: var(--bg-svg-hover);
+    transition: all 0.3s;
+}
+
+.search button:hover {
+    color: var(--tt-button-hover);
+    background: var(--bg-button-hover);
+}
+
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    display: block;
+    overflow: hidden;
+
+    max-height: 62.4rem;
+    overflow-y: overlay;
+
+    border: 1px solid var(--border-table);
+    border-radius: 12px;
+}
+
+table * {
+    font-size: 2rem;
+    color: var(--tt-color-table);
+    font-family: var(--ff-primary);
+    font-weight: 700;
+}
+
+table th {
+    height: 6.4rem;
+    background: #092d38;
+    text-align: left;
+    align-items: center;
+}
+table tr:nth-child(even) {
+    background: var(--bg-user-even);
+}
+table tr:nth-child(odd) {
+    background: var(--bg-user-odd);
+}
+
+table th:nth-child(1) {
+    display: flex;
+    min-width: 50rem;
+    padding-left: 4rem;
+}
+table th:nth-child(2),
+table th:nth-child(3) {
+    min-width: 22rem;
+}
+
+table th:nth-child(4) {
+    min-width: 18rem;
+}
+
+td.user {
+    display: flex;
+    padding: 2.8rem 4rem;
+    gap: 1.6rem;
+}
+
+td.user img {
+    width: 5rem;
+    height: 5rem;
+
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+td.user span {
+    font-weight: normal;
+}
+
+td.user a {
+    text-decoration: none;
+}
+
+td button {
+    background: transparent;
+    color: var(--color-remove);
+    cursor: pointer;
+    border: none;
+}
+
+table::-webkit-scrollbar {
+    width: 0.6rem;
+}
+
+table::-webkit-scrollbar-track {
+    background: transparent;
+    padding: 1.4rem;
+}
+
+table::-webkit-scrollbar-thumb {
+    background: #4a808c;
+    border-radius: 10px;
+}
+
+.empty-state {
+    background: var(--bg-empty);
+    border-radius: 12px;
+    min-height: 50rem;
+    border: 1px solid var(--border-table);
+}
+
+.no-favs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6rem;
+    padding: 21rem;
+}
+
+.no-favs svg {
+    width: 13.2rem;
+    height: 12.5rem;
+}
+
+.no-favs h2 {
+    font-family: var(--ff-secundary);
+    font-weight: 700;
+    font-size: 4rem;
+    line-height: 2.5rem;
+    display: flex;
+    color: var(--tt-empty);
+}
+
+.hide {
+    display: none;
+}
